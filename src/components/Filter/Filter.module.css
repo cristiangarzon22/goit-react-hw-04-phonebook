@@ -1,0 +1,8 @@
+.label {
+    margin: 5px;
+  }
+  
+  .entrada:focus {
+    outline: 1px solid red;
+  }
+  
