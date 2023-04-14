@@ -16,7 +16,7 @@ const App = () => {
   },[]);
 
   useEffect(() => {
-    localStorage.setItem(contacts, JSON.stringify('contacts'));
+    localStorage.setItem('contacts', JSON.stringify('contacts'));
   }, [contacts]);
 
   const handleAddContact = (newContact) => {
