@@ -19,6 +19,7 @@ const ContactForm = (props) => {
  const handleSubmit = (e) => {
     e.preventDefault();
     const { contacts, onAddContact } = props;
+ 
     const existingContact = contacts.find(
       (contact) => contact.name.toLowerCase() === name.toLowerCase()
     );

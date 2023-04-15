@@ -35,9 +35,13 @@ const App = () => {
   };
 
   const getFilteredContacts = () => {
-    return contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
+    if (Array.isArray(contacts)) {
+      return contacts.filter((contact) =>
+        contact.name.toLowerCase().includes(filter.toLowerCase())
+      );
+    }
+   
+    return [];
   };
 
 
