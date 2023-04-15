@@ -19,6 +19,7 @@ const ContactForm = (props) => {
  const handleSubmit = (e) => {
     e.preventDefault();
     const { contacts, onAddContact } = props;
+    if (Array.isArray(contacts)) {
  
     const existingContact = contacts.find(
       (contact) => contact.name.toLowerCase() === name.toLowerCase()
@@ -29,7 +30,8 @@ const ContactForm = (props) => {
       setNumber('');
       return;
     }
-
+  
+  };
     const newContact = { id: nanoid(), name, number };
     onAddContact(newContact);
     setName('');
@@ -65,8 +67,8 @@ const ContactForm = (props) => {
         </button>
       </form>
     );
-  }
-
+  
+    };
 
 ContactForm.propTypes = {
   contacts: PropTypes.arrayOf(
