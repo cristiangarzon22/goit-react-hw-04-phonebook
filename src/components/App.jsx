@@ -14,12 +14,7 @@ const App = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const prevContacts = JSON.parse(localStorage.getItem('contacts'));
-    if (prevContacts && prevContacts.length <= contacts.length) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    }
-  }, [contacts]);
+ 
   
   const handleAddContact = (newContact) => {
     setContacts((prevContacts) => [...prevContacts, newContact]);
