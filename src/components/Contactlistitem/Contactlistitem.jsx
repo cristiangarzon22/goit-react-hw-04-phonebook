@@ -20,4 +20,3 @@ ContactListItem.propTypes = {
 };
 
 export default ContactListItem;
-

@@ -14,13 +14,13 @@ const App = () => {
     }
   }, []);
 
- useEffect(() => {
+  useEffect(() => {
     const prevContacts = JSON.parse(localStorage.getItem('contacts'));
     if (prevContacts && prevContacts.length <= contacts.length) {
       localStorage.setItem('contacts', JSON.stringify(contacts));
     }
   }, [contacts]);
-  
+
   const handleAddContact = (newContact) => {
     setContacts((prevContacts) => [...prevContacts, newContact]);
   };
@@ -32,7 +32,6 @@ const App = () => {
   const handleDeleteContact = (contactId) => {
     const updatedContacts = contacts.filter(
       (contact) => contact.id !== contactId
-     
     );
     setContacts(updatedContacts);
     localStorage.setItem('contacts', JSON.stringify(updatedContacts));
@@ -47,16 +46,10 @@ const App = () => {
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm
-        contacts={contacts}
-        onAddContact={handleAddContact}
-      />
+      <ContactForm contacts={contacts} onAddContact={handleAddContact} />
 
       <h2>Contacts</h2>
-      <Filter
-        filter={filter}
-        onFilterChange={handleFilterChange}
-      />
+      <Filter filter={filter} onFilterChange={handleFilterChange} />
       <ContactList
         contacts={getFilteredContacts()}
         onDeleteContact={handleDeleteContact}
@@ -66,4 +59,3 @@ const App = () => {
 };
 
 export default App;
-
